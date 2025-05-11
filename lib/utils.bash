@@ -127,11 +127,11 @@ function install_version() {
     mv -f "${download_path}/python" "${install_path}"
 
     if [[ ! -x "${install_path}/bin/${TOOL_NAME}" ]]; then
-        rm -rf "${install_path}"
+        #rm -rf "${install_path}"
         fail "Expected ${install_path}/bin/${TOOL_NAME} to be executable"
     fi
     if ! "${install_path}/bin/${TOOL_NAME}" "${TOOL_TEST}" > /dev/null; then
-        rm -rf "${install_path}"
+        #rm -rf "${install_path}"
         fail "Error with command: '${TOOL_NAME} ${TOOL_TEST}'"
     fi
 
