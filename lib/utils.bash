@@ -2,6 +2,9 @@
 
 set -euo pipefail
 
+# TODO
+set -x
+
 GH_REPO="https://github.com/astral-sh/python-build-standalone"
 TOOL_NAME="python"
 TOOL_TEST="--version"
@@ -106,7 +109,7 @@ function download_release() {
         fail "Could not download ${url}"
     fi
 
-    if ! tar -xzf "${download_path}/${release_tar}" -C "${download_path}"; then
+    if ! tar -vxf -C "${download_path}" "${download_path}/${release_tar}"; then
         fail "Could not extract ${release_tar}"
     fi
     rm -f "${download_path}/${release_tar}"
