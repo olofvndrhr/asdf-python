@@ -121,7 +121,7 @@ function install_version() {
 
     mkdir -p "${install_path}"
 
-    mv -f "${download_path}/python" "${install_path}/"
+    mv -f "${download_path}/python" "${install_path}"
     chmod +x "${install_path}"/bin/*
 
     if [[ ! -x "${install_path}/bin/${TOOL_NAME}" ]]; then
