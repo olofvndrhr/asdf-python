@@ -24,5 +24,4 @@ cleanup-tests:
 
 test:
     just cleanup-tests
-    asdf plugin test python .
-    just cleanup-tests
+    asdf plugin test python https://github.com/olofvndrhr/asdf-python.git
