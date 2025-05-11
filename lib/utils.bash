@@ -2,9 +2,6 @@
 
 set -euo pipefail
 
-# TODO
-set -x
-
 GH_REPO="https://github.com/astral-sh/python-build-standalone"
 TOOL_NAME="python"
 TOOL_TEST="--version"
@@ -128,14 +125,12 @@ function install_version() {
     chmod +x "${install_path}"/bin/*
 
     if [[ ! -x "${install_path}/bin/${TOOL_NAME}" ]]; then
-        #rm -rf "${install_path}"
-        #fail "Expected ${install_path}/bin/${TOOL_NAME} to be executable"
-        :
+        rm -rf "${install_path}"
+        fail "Expected ${install_path}/bin/${TOOL_NAME} to be executable"
     fi
     if ! "${install_path}/bin/${TOOL_NAME}" "${TOOL_TEST}" > /dev/null; then
-        #rm -rf "${install_path}"
-        #fail "Error with command: '${TOOL_NAME} ${TOOL_TEST}'"
-        :
+        rm -rf "${install_path}"
+        fail "Error with command: '${TOOL_NAME} ${TOOL_TEST}'"
     fi
 
     echo "${TOOL_NAME} ${version} installation was successful!"
