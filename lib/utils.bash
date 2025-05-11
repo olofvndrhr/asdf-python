@@ -97,7 +97,7 @@ function download_release() {
     release_name="$(get_latest_name)"
     release_tar="cpython-${version}+${release_name}-${platform}-install_only_stripped.tar.gz"
 
-    url="${GH_REPO}/releases/download/v${version#v}/${release_tar}"
+    url="${GH_REPO}/releases/download/${release_name}/${release_tar}"
 
     mkdir -p "${download_path}"
 
