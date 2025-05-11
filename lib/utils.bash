@@ -25,7 +25,7 @@ function sort_versions() {
 
 function get_latest_name() {
     curl -sSfL https://api.github.com/repos/astral-sh/python-build-standalone/releases/latest \
-        | jq '.name'
+        | jq '.name' | sed 's/"//g'
 }
 
 function list_latest_assets() {
