@@ -34,7 +34,7 @@ function list_latest_assets() {
 }
 
 function list_python_versions() {
-    list_latest_assets | grep -oE 'cpython-[0-9]\.[0-9]+\.[0-9]+' | grep -oE '[0-9]\.[0-9]+\.[0-9]+' | uniq
+    list_latest_assets | grep -oE 'cpython-[0-9]\.[0-9]+\.[0-9]+\+' | grep -oE '[0-9]\.[0-9]+\.[0-9]+' | uniq
 }
 
 function list_all_versions() {
