@@ -41,7 +41,7 @@ asdf list-all python
 asdf install python latest
 
 # Set a version globally (on your ~/.tool-versions file)
-asdf global python latest
+asdf set --home python latest
 
 # Now python commands are available
 python --version
