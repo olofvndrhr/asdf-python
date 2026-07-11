@@ -35,7 +35,7 @@ python:
 
 ```shell
 # Show all installable versions
-asdf list-all python
+asdf list all python
 
 # Install specific version
 asdf install python latest
